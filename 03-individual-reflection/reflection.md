@@ -15,10 +15,10 @@
 
 | Phase | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai/hời hợt ở đâu? | Tôi sửa gì |
 |---|---|---|---|---|
-| Scan | Gợi ý các problems trong phạm vi text-to-speech và tóm tắt voice message | Giúp mở rộng danh sách lên hơn 8 problems theo các lăng kính như lặp lại, tốn thời gian, khó tìm kiếm và pain từ người khác | Một số gợi ý ban đầu còn chung chung; dấu hiệu thật sử dụng số liệu giả định, chưa được kiểm chứng | Yêu cầu AI viết lại với actor, workflow và dấu hiệu cụ thể; chỉ giữ số liệu có thể xác nhận bằng log hoặc phỏng vấn |
+| Scan | Gợi ý thêm các problems trong phạm vi text-to-speech và tóm tắt voice message | Giúp mở rộng danh sách lên hơn 8 problems theo các lăng kính như lặp lại, tốn thời gian, khó tìm kiếm và pain từ người khác | Một số gợi ý ban đầu còn chung chung; dấu hiệu thật sử dụng số liệu giả định, chưa được kiểm chứng | Yêu cầu AI viết lại với actor, workflow và dấu hiệu cụ thể; chỉ giữ số liệu có thể xác nhận bằng log hoặc phỏng vấn |
 | Workflow | Mô tả current workflow, bottleneck và metric cho các candidate problems | Giúp nhìn rõ chuỗi thao tác thủ công và vị trí AI có thể hỗ trợ phiên âm, tóm tắt hoặc phân loại | AI giả định một số bước và công cụ chưa chắc tồn tại trong workflow thực tế | Giữ workflow ở mức bản nháp, tách bước AI xử lý và bước con người review, đồng thời ghi rõ các giả định cần validation |
 | Research | So sánh sơ bộ tính khả thi và rủi ro của các candidate problems | Chỉ ra các rủi ro như khó truy cập voice trên nhiều nền tảng, mất ngữ cảnh và bỏ sót quyết định | Chưa có research từ nguồn chính thức; một số nhận định về hiệu quả chưa được kiểm chứng | Không sử dụng claim chưa có nguồn; cần bổ sung phỏng vấn, log thực tế và tài liệu chính thức |
-| Problem Statement | Chọn Top 3, viết problem một câu và tóm tắt Problem Cards #2, #3 | Giúp làm rõ actor, bottleneck, metric và điều còn chưa chắc của từng candidate | AI ban đầu chọn vấn đề TTS phát âm sai làm problem #3 nhưng chưa phù hợp với ưu tiên của tôi | Thay problem #3 bằng việc khó tìm lại quyết định cũ trong voice message và bổ sung rủi ro data access, scope đa nền tảng |
+| Problem Statement | Chọn viết tóm tắt cho problem statement #2#3 dựa trên gợi ý của tôi | Giúp làm rõ điều còn chưa chắc của từng candidate | AI ban đầu chọn vấn đề TTS phát âm sai làm problem #3 nhưng chưa phù hợp với ưu tiên của tôi | Thay problem #3 bằng việc khó tìm lại quyết định cũ trong voice message và bổ sung rủi ro data access, scope đa nền tảng |
 
 ## Bài học của Thành
 
