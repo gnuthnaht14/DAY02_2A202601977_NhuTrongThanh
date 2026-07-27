@@ -23,43 +23,46 @@ Scan 8 problems.
 | 2 | Tóm tắt buổi họp | Có pain thật, AI có thể giúp đọc/tóm tắt | Khó đo được chất lượng của tóm tắt |
 | 3 | Người dùng khó tìm lại một quyết định cũ vì nội dung nằm trong voice message và không thể tìm bằng từ khóa | Nhiều người đau, impact rộng | Data access khó, bản thân việc tìm lại và tổng hợp voice từ các nền tảng đều khó |
 
-## Problem Card #1 — Weekly Report
+## Problem Card #1 — Voice to ticket
 
 **Problem 1 câu:**  
-Mỗi thứ Hai PM mất khoảng 90 phút tổng hợp Weekly Report từ nhiều nguồn, trong đó bước viết narrative tốn nhất và dễ trễ deadline.
+Nhân viên chăm sóc khách hàng lặp lại quá nhiều voice khiếu nại, mỗi voice phải nghe đi nghen lại tầm 2-3 lần/voice 5-6p để viết được ticket và phân loại.
 
 **Actor:**  
-Junior PM chịu trách nhiệm gửi weekly report cho Engineering Manager và CEO.
+Nhân viên CSKH chịu trách nhiệm viết ticket và phân loại để xử lý cho người dùng.
 
 **Thời điểm / bối cảnh:**  
-Thứ Hai hằng tuần, trước buổi leadership sync.
+Hằng ngày, lặp lại mỗi khi có yêu cầu hoặc khiếu nại mới.
 
 **Current workflow:**
 
 ```text
-1. Export Jira sprint data
-2. Lấy metrics từ Google Sheets
-3. Đọc Slack recap tuần
-4. Tổng hợp vào Google Docs
-5. Viết narrative: insight, highlight, risk, next action
+1. Nghe toàn bộ
+2. Nghe lại đoạn chưa rõ
+3. Ghi nội dung chính
+4. Xác định các metadata của yêu cầu(loại vấn đề, mức độ ưu tiên,...)
+5. Nhập ticket
 6. Self-review + format
-7. Gửi email cho stakeholders
+7. Gửi cho bộ phận quản lý
 ```
 
 **Bottleneck:**  
-Bước 5 — viết narrative từ raw data mất khoảng 25 phút và hay bị blank page.
+Bước 4-5: tóm tắt, phân loại và nhập các thông tin theo cấu trúc ticket
 
-**Impact:**  
-90 phút/tuần cho 1 PM. Team có 3 PM nên tổng công sức có thể khoảng 270 phút/tuần. Báo cáo trễ làm leadership thiếu bối cảnh trước buổi sync.
+**Metrics có thể đo:**  
+Thời gian xử lí mỗi voice
+Số voice xử lý được mỗi ngày
+Tỉ lệ ticket phải nghe lại hoặc chỉnh sửa
+Tỉ lệ phân loại ticket đúng
 
 **Success metric:**  
-Giảm tổng thời gian từ 90 phút xuống dưới 30 phút, không tăng số câu CEO/EM phải hỏi lại.
+Giảm tổng thời gian từ nghe 2-3 lần/voice 5-6p + phân loại nhập liệu -> mỗi ticket khoảng 20p. Giảm xuống còn 2p cho mỗi ticket.
 
 **Non-AI alternative:**  
-Template report + Jira dashboard + checklist có thể giảm format effort, nhưng chưa giải quyết tốt phần viết narrative.
+Các form cố định từ khóa phân loại có thể tạm thời hỗ trợ giảm thời gian nhưng không thể trích xuất và tự nhập dữ liệu như workflow
 
 **AI hypothesis:**  
-AI hỗ trợ cấu trúc dữ liệu và draft narrative. PM vẫn review/edit trước khi gửi.
+AI hỗ trợ cấu trúc dữ liệu và điền form, nhân viên vẫn cần check/review trước khi gửi.
 
 **Quick gut:**  
 Workflow.
@@ -67,36 +70,33 @@ Workflow.
 ### Draft current workflow
 
 ```text
-CURRENT STATE — 90 phút
+CURRENT STATE — 26 phút
 
-[1 Export Jira: 10']
-→ [2 Lấy metrics: 10']
-→ [3 Đọc Slack: 15']
-→ [4 Tổng hợp vào Docs: 15']
-→ [5 Viết narrative: 25']  <-- bottleneck
-→ [6 Review + format: 10']
-→ [7 Gửi: 5']
+[1 Nghe voice: 8'] <-- bottleneck
+→ [2 Tóm tắt: 5']
+→ [3 Tổng hợp vào Docs: 5']
+→ [4 Viết ticket: 5']
+→ [5 Review + format: 2']
+→ [6 Gửi: 1']
 ```
 
 ### Draft future workflow
 
 ```text
-FUTURE STATE — 21 phút
+FUTURE STATE — 5 phút
 
-[1 Auto-pull data: 2']
-→ [2 AI cấu trúc dữ liệu: 1']
-→ [3 AI draft narrative: 1']
-→ [4 PM review + edit: 15']  <-- human boundary
-→ [5 PM gửi: 2']
+[1 Auto-read data: 30s]
+→ [2 AI tóm tắt nội dung: 1']
+→ [3 AI nhập thông tin: 30s]
+→ [4 PM review + edit: 2']  <-- human boundary
+→ [5 PM gửi: 1']
 
-Fallback: AI draft tệ → PM tự viết lại.
+Fallback: AI draft tệ → Nhân viên CSKH tự viết lại.
 ```
 
 ## Problem Cards #2 và #3 — tóm tắt
 
 | Card | Actor | Bottleneck | Metric | Quick gut | Vì sao chưa chọn làm #1 |
 |---|---|---|---|---|---|
-| Review PRD | PM reviewer | Đọc 10-15 trang để hiểu context | 45 phút → 20 phút | Workflow | Quality metric khó hơn |
-| Slack Search | Team member | Search keyword rồi đọc thread | 15 phút → dưới 2 phút | Agent / Workflow | Data access và scope rộng |
-
----
+| Tổng hợp báo cáo tiến độ từ voice | Trưởng nhóm, quản lý dự án | Phải nghe voice của từng thành viên, ghi tiến độ, blocker và action item rồi tổng hợp lại | Thời gian tổng hợp; số action item bị bỏ sót; số câu hỏi phải hỏi lại | Workflow | Cần xử lý nhiều người nói, nội dung không đồng nhất và thông tin phụ thuộc ngữ cảnh |
+| Tìm lại quyết định cũ trong voice message | Thành viên nhóm, trưởng nhóm, PM | Không thể tìm bằng từ khóa nên phải nhớ vị trí hoặc nghe lại nhiều voice cũ | Thời gian tìm; số voice phải nghe lại; số lần phải hỏi lại; tỷ lệ tìm đúng quyết định | Agent / Workflow | Data access khó; voice nằm trên nhiều nền tảng; phạm vi tìm kiếm và tổng hợp có thể quá rộng |
