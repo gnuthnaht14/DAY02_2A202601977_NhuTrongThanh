@@ -6,29 +6,22 @@ Scan 8 problems.
 
 | # | Lăng kính | Problem quan sát được | Ai chịu ảnh hưởng? | Dấu hiệu thật |
 |---|---|---|---|---|
-| 1 | Lặp lại | Mỗi ngày phải nghe lần lượt nhiều voice message trong nhóm Zalo/Messenger để tìm thông tin liên quan đến công việc | team member, lead | Lặp lại mỗi ngày, tốn 30 phút |
+| 1 | Lặp lại | Mỗi ngày phải nghe lần lượt nhiều voice message trong nhóm Zalo/Messenger để tổng hợp lại báo cáo | team member, lead | Lặp lại mỗi ngày, tốn 30 phút |
 | 2 | Tốn thời gian | Sau cuộc họp dài, phải ghi và tóm tắt lại danh sách công việc | PM, team member, team leader | Bản ghi dài 30-60 phút; mất thêm khoảng 40-60 phút để viết recap |
-| 3 | AI có thể làm tốt hơn | Liên kết voice với context hiện tại của chat | Team member, PM | Tốn thời gian vừa xem voice vừa đọc chat 30p-45p |
+| 3 | Lặp lại | Nhân viên CSKH nghe voice khách hàng và nhập lại vào hệ thống ticket | Team member, Nhân viên | Mỗi voice tốn khoảng 5-8p để nghe, ghi và phân loại |
 | 4 | AI có thể làm tốt hơn | Công cụ chuyển voice thành văn bản tạo transcript dài nhưng không chỉ ra ý chính, deadline và người chịu trách nhiệm | PM, team member | tốn thời gian transcript+đọc lại để tóm tắt |
 | 5 | Gián đoạn | Người đang họp, học hoặc ở nơi công cộng không thể mở voice message ngay nên phản hồi công việc bị chậm | Nhân viên, sinh viên | Voice thường được nghe sau khoảng 1-2h, ảnh hưởng tới công việc chung |
 | 6 | AI có thể tốt hơn | Người dùng khó tìm lại một quyết định cũ vì nội dung nằm trong voice message và không thể tìm bằng từ khóa | Cả team | 10-15 phút/lần tìm |
 | 7 | Pain từ người khác | Trưởng nhóm nhận báo cáo bằng voice từ nhiều thành viên nhưng khó tổng hợp nhanh trạng thái, rủi ro và việc cần hỗ trợ | PM, team leader | Hỏi lại 2-3 lần/spec |
 | 8 | Pain từ người khác | Người lớn tuổi học người có vấn đề về thính giác không thể tiếp nhận thông báo và hướng dẫn | Người lớn tuổi, người thính lực yếu | Phải download các voice và sử dụng phần mềm thứ 3 |
 
-Vì sao phần scan này mạnh:
-
-- Có scan rộng trước khi hội tụ.
-- Có nhiều lăng kính khác nhau.
-- Mỗi problem có actor và dấu hiệu thật.
-- Không bắt đầu bằng "làm chatbot" hoặc "xây agent".
-
 ## Top 3
 
 | Rank | Problem | Vì sao chọn | Điều còn chưa chắc |
 |---|---|---|---|
-| 1 | Weekly Report | Workflow rõ, mất nhiều thời gian, có metric tốt | Narrative "đủ tốt" đo thế nào |
-| 2 | Review PRD | Có pain thật, AI có thể giúp đọc/tóm tắt | Quality improvement khó đo |
-| 3 | Slack Search | Nhiều người đau, impact rộng | Data access khó, scope có thể quá lớn |
+| 1 | Voice to ticket | Workflow rõ, đọc lại và phân loại lâu, có metric tốt | Đưa human-in-loop để verify như thế nào |
+| 2 | Tóm tắt buổi họp | Có pain thật, AI có thể giúp đọc/tóm tắt | Khó đo được chất lượng của tóm tắt |
+| 3 | Người dùng khó tìm lại một quyết định cũ vì nội dung nằm trong voice message và không thể tìm bằng từ khóa | Nhiều người đau, impact rộng | Data access khó, bản thân việc tìm lại và tổng hợp voice từ các nền tảng đều khó |
 
 ## Problem Card #1 — Weekly Report
 
